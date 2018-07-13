@@ -1,5 +1,6 @@
 
 homes = ["Mansion", "Apartment", "Shack", "House", "BinLaden's Crib"];
+
 //repeats rand until value btwn 0 to 4 is found, returns element from array
 getHome = () => {
     if (process.argv[2]) {
@@ -42,9 +43,16 @@ getGun = () => {
         else {throw "!!!!Choose a GUN!!!!"}
 
     }
-
+inLove = () => {
+    switch (Math.floor(Math.random() * 3)){
+        case 0: love = "real love"; break;
+        case 1: love = "fake love"; break;
+        case 2: love = "lust"; break;
+    }
+    return love
+}
 
 mash = () => {return "You will live in a " + getHome() + 
-", and you will have " + getChildrenCount() +  " kids, and you'll drive a " + getCar() + " and carry a " + getGun() + "!"}
+", and you will have " + getChildrenCount() +  " kids, and you'll drive a " + getCar() + " and carry a " + getGun() +". You will have "+ inLove() + " with them!"}
 
 console.log(mash());
